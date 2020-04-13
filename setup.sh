@@ -36,12 +36,12 @@ apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-r
 apt -y install qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils
 apt -y install clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python-pip python3-pip simplescreenrecorder vlc
 
-adduser $CUUSER kvm
+adduser $CURUSER kvm
 chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
 
 exit # exit su shell
 
-mkdir -p ~./fonts ~/.vmware ~/.config
+mkdir -p ~/.config ~./fonts ~/.vmware
 
 wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/preferences > ~/.vmware/preferences
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
