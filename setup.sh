@@ -41,8 +41,8 @@ wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/preferenc
 echo [QT] > ~/.config/Trolltech.conf
 echo style=GTK+ > ~/.config/Trolltech.conf
 
-gsettings set org.gnome.shell enable-hot-corners true
-gsettings set org.gnome.shell.extensions.hash-to-dock click-action 'minimize'
+#gsettings set org.gnome.shell enable-hot-corners true
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 gsettings set com.ubuntu.update-notifier show-livepatch-status-icon false
 
 history -c && reboot
