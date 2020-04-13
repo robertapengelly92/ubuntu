@@ -11,7 +11,7 @@ sysctl -p
 echo "unset HISTFILE" > /etc/bash.bashrc
 
 echo QT_QPA_PLATFORMTHEME=gtk2 > /etc/environment
-echo QT_STYLE_OVERRIDE > /etc/environment
+echo QT_STYLE_OVERRIDE=gtk2 > /etc/environment
 
 wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/grub > /etc/default/grub
 update-grub
