@@ -32,10 +32,12 @@ adduser $USER kvm
 chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
-exit
+exit # exit su shell
 
-echo [QT] > ~/Trolltech.conf
-echo style=GTK+ > /Trolltech.conf
+mkdir -p ~/.vmware ~/.config
+wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/preferences > ~/.vmware/preferences
+echo [QT] > ~/.config/Trolltech.conf
+echo style=GTK+ > ~/.config/Trolltech.conf
 
 gsettings set org.gnome.shell enable-hot-corners true
 gsettings set org.gnome.shell.extensions.hash-to-dock click-action 'minimize'
