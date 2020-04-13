@@ -39,6 +39,8 @@ apt -y install clementine deluge gdebi-core ghex gimp gnome-control-center isoma
 adduser $CURUSER kvm
 chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
 
+apt -y purge --autoremove
+
 exit # exit su shell
 
 mkdir -p ~/.config ~./fonts ~/.vmware
