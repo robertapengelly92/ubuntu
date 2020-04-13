@@ -38,12 +38,14 @@ apt -y install clementine deluge gdebi-core ghex gimp gnome-control-center isoma
 
 adduser $CUUSER kvm
 chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
-wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
 exit # exit su shell
 
-mkdir -p ~/.vmware ~/.config
+mkdir -p ~./fonts ~/.vmware ~/.config
+
 wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/preferences > ~/.vmware/preferences
+wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
+
 echo [QT] > ~/.config/Trolltech.conf
 echo style=GTK+ > ~/.config/Trolltech.conf
 
