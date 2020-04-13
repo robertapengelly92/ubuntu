@@ -23,7 +23,7 @@ apt -y install binutils bison flex gcc gcc-multilib make nasm nautilus-wip
 
 #add-apt-repository -y ppa:fossproject/ppa
 add-apt-repository -y ppa:linuxuprising/java
-add-apt-repository -y ppa:notepadqq-team/notepadqq
+#add-apt-repository -y ppa:notepadqq-team/notepadqq
 
 apt -y install green-recorder notepadqq oracle-java14-installer
 apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 webp
