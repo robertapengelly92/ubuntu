@@ -13,7 +13,7 @@ echo "unset HISTFILE" > /etc/bash.bashrc
 echo QT_QPA_PLATFORMTHEME=gtk2 > /etc/environment
 echo QT_STYLE_OVERRIDE=gtk2 > /etc/environment
 
-wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/grub > /etc/default/grub
+wget -O /etc/default/grub https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/grub
 update-grub
 
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
@@ -46,9 +46,9 @@ exit # exit su shell
 mkdir -p ~/.config ~/.fonts ~/.vmware
 mkdir -p ~/.config/Code/User
 
-wget https://raw.githubusercontent.com/robertapengelly92/visual-studio-code/master/keybindings.json > ~/.config/Code/User/keybindings.json
-wget https://raw.githubusercontent.com/robertapengelly92/visual-studio-code/master/settings.json > ~/.config/Code/User/settings.json
-wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/preferences > ~/.vmware/preferences
+wget -O ~/.config/Code/User/keybindings.json https://raw.githubusercontent.com/robertapengelly92/visual-studio-code/master/keybindings.json
+wget -O ~/.config/Code/User/settings.json https://raw.githubusercontent.com/robertapengelly92/visual-studio-code/master/settings.json
+wget -O ~/.vmware/preferences https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/preferences
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
 echo [QT] > ~/.config/Trolltech.conf
