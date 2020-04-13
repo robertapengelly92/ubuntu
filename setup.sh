@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo su
-sync; echo 3 > /proc/sys/drop_caches
+sync; echo 3 > /proc/sys/vm/drop_caches
 
 echo vm.swappiness=10 > /etc/sysctl.conf
 sysctl -p
