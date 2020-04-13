@@ -28,7 +28,7 @@ apt install -y git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-r
 apt install -y qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils
 apt install -y cleamentine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python-pip python3-pip simplescreenrecorder vlc
 
-adduser $USER kvme
+adduser $USER kvm
 chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
@@ -40,3 +40,5 @@ echo style=GTK+ > /Trolltech.conf
 gsettings set org.gnome.shell enable-hot-corners true
 gsettings set org.gnome.shell.extensions.hash-to-dock click-action 'minimize'
 gsettings set com.ubuntu.update-notifier show-livepatch-status-icon false
+
+history -c && reboot
