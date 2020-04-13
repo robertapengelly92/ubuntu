@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CURUSER=$USER;
+#CURUSER=$USER;
 
 sudo su
 sync; echo 3 > /proc/sys/vm/drop_caches
@@ -36,8 +36,8 @@ apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-r
 apt -y install qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils
 apt -y install clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python-pip python3-pip simplescreenrecorder vlc
 
-adduser $CURUSER kvm
-chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
+#adduser $CURUSER kvm
+#chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
 
 apt -y purge --autoremove
 
