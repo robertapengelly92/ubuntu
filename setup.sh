@@ -11,13 +11,7 @@ echo "unset HISTFILE" > /etc/bash.bashrc
 echo QT_QPA_PLATFORMTHEME=gtk2 > /etc/environment
 echo QT_STYLE_OVERRIDE > /etc/environment
 
-OLD=GRUB_TIMEOUT=10
-OUTPUT=""
-NEW=GRUB_TIMEOUT=3
-while read LINE || [ "$LINE" ]; do
-	OUTPUT="${OUTPUT}${LINE//$OLD/$NEW}
-done < /etc/default/grub
-printf "${OUTPUT}" > "${FILE]"
+wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/grub > /etc/default/grub
 update-grub
 
 apt purge -y gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
