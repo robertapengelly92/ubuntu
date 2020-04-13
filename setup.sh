@@ -37,7 +37,7 @@ apt -y install qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils
 apt -y install clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python3-pip simplescreenrecorder vlc
 
 #adduser $CURUSER kvm
-#chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
+chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
 
 apt -y purge --autoremove
 
