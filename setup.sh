@@ -18,12 +18,16 @@ update-grub
 
 apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
 apt -y install gnome-calculator gnome-characters gnome-logs gnome-system-monitor
-apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras
+#apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras
+apt -y install chrome-gnome-shell gnome-tweaks
 apt -y install binutils bison flex gcc gcc-multilib make nasm nautilus-wip
 
 #add-apt-repository -y ppa:fossproject/ppa
 add-apt-repository -y ppa:linuxuprising/java
 #add-apt-repository -y ppa:notepadqq-team/notepadqq
+
+echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
 
 apt -y install green-recorder notepadqq oracle-java14-installer
 apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 webp
@@ -45,4 +49,4 @@ echo style=GTK+ > ~/.config/Trolltech.conf
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 gsettings set com.ubuntu.update-notifier show-livepatch-status-icon false
 
-history -c && reboot
+#history -c && reboot
