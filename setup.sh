@@ -27,8 +27,8 @@ apt -y install binutils bison flex gcc gcc-multilib make nasm nautilus-wipe
 add-apt-repository -y ppa:linuxuprising/java
 #add-apt-repository -y ppa:notepadqq-team/notepadqq
 
-echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-2 select true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-2 seen true | sudo debconf-set-selections
 
 #apt -y install green-recorder notepadqq oracle-java14-installer
 apt -y install oracle-java14-installer
