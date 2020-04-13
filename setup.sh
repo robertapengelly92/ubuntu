@@ -1,5 +1,7 @@
 #!/bin/sh
 
+CURUSER=$USER;
+
 sudo su
 sync; echo 3 > /proc/sys/vm/drop_caches
 
@@ -14,21 +16,21 @@ echo QT_STYLE_OVERRIDE > /etc/environment
 wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/grub > /etc/default/grub
 update-grub
 
-apt purge -y gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
-apt install -y gnome-calculator gnome-characters gnome-logs gnome-system-monitor
-apt install -y chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras
-apt install -y binutils bison flex gcc gcc-multilib make nasm nautilus-wip
+apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
+apt -y install gnome-calculator gnome-characters gnome-logs gnome-system-monitor
+apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras
+apt -y install binutils bison flex gcc gcc-multilib make nasm nautilus-wip
 
 #add-apt-repository -y ppa:fossproject/ppa
-add-adt-repository -y ppa:linuxuprising/java
+add-apt-repository -y ppa:linuxuprising/java
 add-apt-repository -y ppa:notepadqq-team/notepadqq
 
-apt install -y green-recorder notepadqq oracle-java14-installer
-apt install -y git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 webp
-apt install -y qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils
-apt install -y clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python-pip python3-pip simplescreenrecorder vlc
+apt -y install green-recorder notepadqq oracle-java14-installer
+apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 webp
+apt -y install qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils
+apt -y install clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python-pip python3-pip simplescreenrecorder vlc
 
-adduser $USER kvm
+adduser $CUUSER kvm
 chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
