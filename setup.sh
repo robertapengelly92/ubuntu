@@ -44,7 +44,10 @@ apt -y purge --autoremove
 exit # exit su shell
 
 mkdir -p ~/.config ~/.fonts ~/.vmware
+mkdir -p ~/.config/Code/User
 
+wget https://raw.githubusercontent.com/robertapengelly92/visual-studio-code/master/keybindings.json > ~/.config/Code/User/keybindings.json
+wget https://raw.githubusercontent.com/robertapengelly92/visual-studio-code/master/settings.json > ~/.config/Code/User/settings.json
 wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/preferences > ~/.vmware/preferences
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
