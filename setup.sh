@@ -19,7 +19,7 @@ apt install -y gnome-calculator gnome-characters gnome-logs gnome-system-monitor
 apt install -y chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras
 apt install -y binutils bison flex gcc gcc-multilib make nasm nautilus-wip
 
-add-apt-repository -y ppa:fossproject/ppa
+#add-apt-repository -y ppa:fossproject/ppa
 add-adt-repository -y ppa:linuxuprising/java
 add-apt-repository -y ppa:notepadqq-team/notepadqq
 
