@@ -43,7 +43,7 @@ apt -y purge --autoremove
 
 exit # exit su shell
 
-mkdir -p ~/.config ~./fonts ~/.vmware
+mkdir -p ~/.config ~/.fonts ~/.vmware
 
 wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/preferences > ~/.vmware/preferences
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
