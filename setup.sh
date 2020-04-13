@@ -16,10 +16,11 @@ echo QT_STYLE_OVERRIDE > /etc/environment
 wget https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/grub > /etc/default/grub
 update-grub
 
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+
 apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
 apt -y install gnome-calculator gnome-characters gnome-logs gnome-system-monitor
-#apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras
-apt -y install chrome-gnome-shell gnome-tweaks
+apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras
 apt -y install binutils bison flex gcc gcc-multilib make nasm nautilus-wip
 
 #add-apt-repository -y ppa:fossproject/ppa
