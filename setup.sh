@@ -21,7 +21,7 @@ echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select tr
 apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
 apt -y install gnome-calculator gnome-characters gnome-logs gnome-system-monitor
 apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras
-apt -y install binutils bison flex gcc gcc-multilib make nasm nautilus-wip
+apt -y install binutils bison flex gcc gcc-multilib make nasm nautilus-wipe
 
 #add-apt-repository -y ppa:fossproject/ppa
 add-apt-repository -y ppa:linuxuprising/java
@@ -30,7 +30,8 @@ add-apt-repository -y ppa:linuxuprising/java
 echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
 
-apt -y install green-recorder notepadqq oracle-java14-installer
+#apt -y install green-recorder notepadqq oracle-java14-installer
+apt -y install oracle-java14-installer
 apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 webp
 apt -y install qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils
 apt -y install clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python-pip python3-pip simplescreenrecorder vlc
