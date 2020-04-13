@@ -26,7 +26,7 @@ add-apt-repository -y ppa:notepadqq-team/notepadqq
 apt install -y green-recorder notepadqq oracle-java14-installer
 apt install -y git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 webp
 apt install -y qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils
-apt install -y cleamentine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python-pip python3-pip simplescreenrecorder vlc
+apt install -y clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python-pip python3-pip simplescreenrecorder vlc
 
 adduser $USER kvm
 chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
