@@ -10,8 +10,8 @@ sysctl -p
 
 echo "unset HISTFILE" >> /etc/bash.bashrc
 
-echo QT_QPA_PLATFORMTHEME=gtk2 >> /etc/environment
-echo QT_STYLE_OVERRIDE=gtk2 >> /etc/environment
+echo "QT_QPA_PLATFORMTHEME=gtk2" >> /etc/environment
+echo "QT_STYLE_OVERRIDE=gtk2" >> /etc/environment
 
 #wget -O /etc/default/grub https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/grub
 sed -i -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=3/g' /etc/default/grub
@@ -23,6 +23,9 @@ apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
 apt -y install gnome-calculator gnome-characters gnome-logs gnome-system-monitor
 apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras
 apt -y install binutils bison flex gcc gcc-multilib make nasm nautilus-wipe
+
+wget -O /var/lib/dpkg/info/oracle-java14-installer.conf https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.conf
+wget -O /var/lib/dpkg/info/oracle-java14-installer.postinst https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.postinst
 
 #add-apt-repository -y ppa:fossproject/ppa
 add-apt-repository -y ppa:linuxuprising/java
@@ -49,7 +52,7 @@ mkdir -p ~/.config/Code/User
 
 wget -O ~/.config/Code/User/keybindings.json https://raw.githubusercontent.com/robertapengelly92/visual-studio-code/master/keybindings.json
 wget -O ~/.config/Code/User/settings.json https://raw.githubusercontent.com/robertapengelly92/visual-studio-code/master/settings.json
-wget -O ~/.vmware/preferences https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/preferences
+wget -O ~/.vmware/preferences https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/preferences
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
 echo "[QT]" >> ~/.config/Trolltech.conf
