@@ -5,10 +5,10 @@
 sudo su
 sync; echo 3 > /proc/sys/vm/drop_caches
 
-echo vm.swappiness=10 > /etc/sysctl.conf
+echo vm.swappiness=10 >> /etc/sysctl.conf
 sysctl -p
 
-echo "unset HISTFILE" > /etc/bash.bashrc
+echo "unset HISTFILE" >> /etc/bash.bashrc
 
 echo QT_QPA_PLATFORMTHEME=gtk2 > /etc/environment
 echo QT_STYLE_OVERRIDE=gtk2 > /etc/environment
