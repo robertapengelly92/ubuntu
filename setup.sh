@@ -5,15 +5,16 @@
 sudo su
 sync; echo 3 > /proc/sys/vm/drop_caches
 
-echo vm.swappiness=10 >> /etc/sysctl.conf
+echo "vm.swappiness=10" >> /etc/sysctl.conf
 sysctl -p
 
 echo "unset HISTFILE" >> /etc/bash.bashrc
 
-echo QT_QPA_PLATFORMTHEME=gtk2 > /etc/environment
-echo QT_STYLE_OVERRIDE=gtk2 > /etc/environment
+echo QT_QPA_PLATFORMTHEME=gtk2 > >/etc/environment
+echo QT_STYLE_OVERRIDE=gtk2 >> /etc/environment
 
-wget -O /etc/default/grub https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/grub
+#wget -O /etc/default/grub https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/grub
+sed -i -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=3/g' /etc/default/grub
 update-grub
 
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
@@ -51,8 +52,8 @@ wget -O ~/.config/Code/User/settings.json https://raw.githubusercontent.com/robe
 wget -O ~/.vmware/preferences https://raw.githubusercontent.com/robertapengelly92/Ubuntu/master/preferences
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
-echo [QT] > ~/.config/Trolltech.conf
-echo style=GTK+ > ~/.config/Trolltech.conf
+echo "[QT]" >> ~/.config/Trolltech.conf
+echo "style=GTK+" >> ~/.config/Trolltech.conf
 
 #gsettings set org.gnome.shell enable-hot-corners true
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
