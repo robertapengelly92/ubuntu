@@ -36,7 +36,8 @@ echo debconf shared/accepted-oracle-license-v1-2 select true | sudo debconf-set-
 echo debconf shared/accepted-oracle-license-v1-2 seen true | sudo debconf-set-selections
 
 #apt -y install green-recorder notepadqq oracle-java14-installer
-apt -yd install oracle-java14-installer
+apy -y java-common
+apt -d install oracle-java14-installer
 
 mkdir -p /tmp/oracle-java14-installer/DEBIAN
 dpkg-deb -x /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb /tmp/oracle-java14-installer
