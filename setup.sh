@@ -25,7 +25,9 @@ apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras
 apt -y install binutils bison flex gcc gcc-multilib make nasm nautilus-wipe
 
 wget -O /var/lib/dpkg/info/oracle-java14-installer.config https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.config
+chmod 0444 /var/lib/dpkg/info/oracle-java14-installer.config
 wget -O /var/lib/dpkg/info/oracle-java14-installer.postinst https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.postinst
+chmod 0444 /var/lib/dpkg/info/oracle-java14-installer.postinst
 
 #add-apt-repository -y ppa:fossproject/ppa
 add-apt-repository -y ppa:linuxuprising/java
