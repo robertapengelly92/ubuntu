@@ -38,7 +38,7 @@ apt -yd install oracle-java14-installer
 
 mkdir -p /tmp/oracle-java14-installer/DEBIAN
 dpkg-deb -x /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb /tmp/oracle-java14-installer
-dpkg-deb -e /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb /tmp/oracle-java14-installer/DEBIAN [...do something, e.g. edit the control file...]
+dpkg-deb -e /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb /tmp/oracle-java14-installer/DEBIAN
 
 wget -O /tmp/oracle-java14-installer/DEBIAN/config https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.config
 wget -O /tmp/oracle-java14-installer/DEBIAN/postinst https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.postinst
