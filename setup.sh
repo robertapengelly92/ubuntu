@@ -43,7 +43,7 @@ dpkg-deb -e /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising
 wget -O /tmp/oracle-java14-installer/DEBIAN/config https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.config
 wget -O /tmp/oracle-java14-installer/DEBIAN/postinst https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.postinst
 
-dpkg-deb -b extract /var/cache/apt/archives
+dpkg-deb -b /tmp/oracle-java14-installer /var/cache/apt/archives
 dpkg -i /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb
 
 apt -y install oracle-java14-set-default
