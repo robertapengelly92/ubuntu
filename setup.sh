@@ -17,6 +17,8 @@ echo "QT_STYLE_OVERRIDE=gtk2" >> /etc/environment
 sed -i -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=3/g' /etc/default/grub
 update-grub
 
+apt -y install cabextract
+
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
 wget -O /var/cache/apt/archives/ttf-mscorefonts-installer_3.7_all.deb http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.7_all.deb
 dpkg -i /var/cache/apt/archives/ttf-mscorefonts-installer_3.7_all.deb
