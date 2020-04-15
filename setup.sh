@@ -24,11 +24,6 @@ apt -y install gnome-calculator gnome-characters gnome-logs gnome-system-monitor
 apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras
 apt -y install binutils bison flex gcc gcc-multilib make nasm nautilus-wipe
 
-wget -O /var/lib/dpkg/info/oracle-java14-installer.config https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.config
-chmod 0444 /var/lib/dpkg/info/oracle-java14-installer.config
-wget -O /var/lib/dpkg/info/oracle-java14-installer.postinst https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.postinst
-chmod 0444 /var/lib/dpkg/info/oracle-java14-installer.postinst
-
 #add-apt-repository -y ppa:fossproject/ppa
 add-apt-repository -y ppa:linuxuprising/java
 #add-apt-repository -y ppa:notepadqq-team/notepadqq
@@ -37,7 +32,19 @@ echo debconf shared/accepted-oracle-license-v1-2 select true | sudo debconf-set-
 echo debconf shared/accepted-oracle-license-v1-2 seen true | sudo debconf-set-selections
 
 #apt -y install green-recorder notepadqq oracle-java14-installer
-apt -y install oracle-java14-installer oracle-java14-set-default
+apt -yd install oracle-java14-installer
+
+mkdir -p /tmp/oracle-java14-installer/DEBIAN
+dpkg-deb -x /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb /tmp/oracle-java14-installer/
+dpkg-deb -e /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb /tmp/oracle-java14-installer/DEBIAN [...do something, e.g. edit the control file...]
+
+wget -O /tmp/oracle-java14-installer/DEBIAN/config https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.config
+wget -O /tmp/oracle-java14-installer/DEBIAN/postinst https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.postinst
+
+dpkg-deb -b extract/ /var/cache/apt/archives/
+dpkg -i /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb
+
+apt -y install oracle-java14-set-default
 apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 webp
 apt -y install qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils
 apt -y install bochs bochs-x clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python3-pip simplescreenrecorder vlc
