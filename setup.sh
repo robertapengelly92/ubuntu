@@ -18,6 +18,8 @@ sed -i -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=3/g' /etc/default/grub
 update-grub
 
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+wget -O /var/cache/apt/archives/ttf-mscorefonts-installer_3.7_all.deb http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.7_all.deb
+dpkg -i /var/cache/apt/archives/ttf-mscorefonts-installer_3.7_all.deb
 
 apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
 apt -y install gnome-calculator gnome-characters gnome-logs gnome-system-monitor
