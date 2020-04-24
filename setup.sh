@@ -37,17 +37,17 @@ echo debconf shared/accepted-oracle-license-v1-2 seen true | sudo debconf-set-se
 
 #apt -y install green-recorder notepadqq oracle-java14-installer
 apt -y install java-common
-apt -dy install oracle-java14-installer
+apt -y install oracle-java14-installer
 
-mkdir -p /tmp/oracle-java14-installer/DEBIAN
-dpkg-deb -x /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb /tmp/oracle-java14-installer
-dpkg-deb -e /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb /tmp/oracle-java14-installer/DEBIAN
+#mkdir -p /tmp/oracle-java14-installer/DEBIAN
+#dpkg-deb -x /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb /tmp/oracle-java14-installer
+#dpkg-deb -e /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb /tmp/oracle-java14-installer/DEBIAN
 
-wget -O /tmp/oracle-java14-installer/DEBIAN/config https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.config
-wget -O /tmp/oracle-java14-installer/DEBIAN/postinst https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.postinst
+#wget -O /tmp/oracle-java14-installer/DEBIAN/config https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.config
+#wget -O /tmp/oracle-java14-installer/DEBIAN/postinst https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/oracle-java14-installer.postinst
 
-dpkg-deb -b /tmp/oracle-java14-installer /var/cache/apt/archives
-dpkg -i /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb
+#dpkg-deb -b /tmp/oracle-java14-installer /var/cache/apt/archives
+#dpkg -i /var/cache/apt/archives/oracle-java14-installer_14.0-1~linuxuprising1_amd64.deb
 
 apt -y install oracle-java14-set-default
 apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 webp
