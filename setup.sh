@@ -52,7 +52,8 @@ apt -y install oracle-java14-installer
 apt -y install oracle-java14-set-default
 apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 webp
 apt -y install qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils
-apt -y install bochs bochs-x clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python3-pip simplescreenrecorder vlc
+apt -y install bochs bochsbios bochs-x vgabios
+apt -y install clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python3-pip simplescreenrecorder vlc
 
 #adduser $CURUSER kvm
 chmod 4711 /usr/bin/wodim; sudo chmod 4711 /usr/bin/cdrdao
