@@ -1,46 +1,41 @@
-#!/bin/bash
+#!/bin/sh
 
-read -sp "Please enter your password: " password
+sudo su
 
-#echo $password | sudo -S su || exit
+sync; echo 3 > /proc/sys/vm/drop_caches
 
-echo $password | sudo -S bash -c "sync; echo 3 > /proc/sys/vm/drop_caches"
+echo "vm.swappiness=10" >> /etc/sysctl.conf
+sysctl -p
 
-echo $password | sudo -S bash -c "echo vm.swappiness=10 >> /etc/sysctl.conf"
-echo $password | sudo -S sysctl -p
+echo "unset HISTFILE" >> /etc/bash.bashrc
 
-echo $password | sudo -S bash -c "echo unset HISTFILE >> /etc/bash.bashrc"
+echo "QT_QPA_PLATFORMTHEME=gtk2" >> /etc/environment
+echo "QT_STYLE_OVERRIDE=gtk2" >> /etc/environment
 
-echo $password | sudo -S bash -c "echo QT_QPA_PLATFORMTHEME=gtk2 >> /etc/environment"
-echo $password | sudo -S bash -c "echo QT_STYLE_OVERRIDE=gtk2 >> /etc/environment"
+sed -i -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=3/g' /etc/default/grub
+update-grub
 
-echo $password | sudo -S bash -c "sed -i -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=3/g' /etc/default/grub"
-echo $password | sudo -S update-grub
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+apt -y install ttf-mscorefonts-installer || exit 1
 
+apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras || exit 1
+apt -y install binutils bison flex gcc gcc-multilib g++ make nasm nautilus-wipe || exit 1
+
+add-apt-repository -y ppa:linuxuprising/java
 echo debconf shared/accepted-oracle-license-v1-2 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-2 seen true | sudo debconf-set-selection
-echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+apt -y install oracle-java14-installer oracle-java14-set-default || exit 1
 
-exit 1
+apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 webp || exit 1
+apt -y install qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils || exit 1
+apt -y install bochs bochsbios bochs-x vgabios || exit 1
+apt -y install clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python3-pip simplescreenrecorder vlc || exit 1
 
-echo $password | sudo -S apt -y install ttf-mscorefonts-installer || exit 1
+chmod 4711 /usr/bin/wodim
+chmod 4711 /usr/bin/cdrdao
 
-echo $password | sudo -S apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras || exit 1
-echo $password | sudo -S apt -y install binutils bison flex gcc gcc-multilib g++ make nasm nautilus-wipe || exit 1
-
-echo $password | sudo -S add-apt-repository -y ppa:linuxuprising/java
-echo $password | sudo -S apt -y install oracle-java14-installer oracle-java14-set-default || exit 1
-
-echo $password | sudo -S apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 webp || exit 1
-echo $password | sudo -S apt -y install qemu qemu-block-extra qemu-slof qemu-system qemu-user qemu-utils || exit 1
-echo $password | sudo -S apt -y install bochs bochsbios bochs-x vgabios || exit 1
-echo $password | sudo -S apt -y install clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python3-pip simplescreenrecorder vlc || exit 1
-
-echo $password | sudo -S chmod 4711 /usr/bin/wodim
-echo $password | sudo -S chmod 4711 /usr/bin/cdrdao
-
-echo $password | sudo -S apt -y purge --autoremove
-echo $password | sudo -S adduser $USER kvm
+apt -y purge --autoremove
+exit
 
 mkdir -p ~/.config ~/.fonts ~/.vmware
 mkdir -p ~/.config/Code/User ~/.config/Notepadqq
