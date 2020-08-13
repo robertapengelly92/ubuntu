@@ -15,6 +15,9 @@ echo "QT_STYLE_OVERRIDE=gtk2" >> /etc/environment
 sed -i -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=3/g' /etc/default/grub
 update-grub
 
+apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
+apt -y install gnome-calculator gnome-characters gnome-logs gnome-system-monitor
+
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
 apt -y install ttf-mscorefonts-installer || exit 1
 
