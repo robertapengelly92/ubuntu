@@ -22,7 +22,7 @@ echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select tr
 apt -y install ttf-mscorefonts-installer || exit 1
 
 apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras || exit 1
-apt -y install binutils bison flex gcc gcc-multilib g++ make nasm nautilus-wipe || exit 1
+apt -y install binutils bison flex gcc gcc-multilib g++ make printer-driver-escpr nasm nautilus-wipe || exit 1
 
 add-apt-repository -y ppa:linuxuprising/java
 echo debconf shared/accepted-oracle-license-v1-2 select true | sudo debconf-set-selections
@@ -32,7 +32,7 @@ apt -y install oracle-java14-installer oracle-java14-set-default || exit 1
 apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 texinfo webp || exit 1
 apt -y install qemu qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qemu-utils || exit 1
 apt -y install bochs bochsbios bochs-x vgabios || exit 1
-apt -y install clementine deluge gdebi-core ghex gimp gnome-control-center isomaster k3b kdenlive libreoffice python3 python3-pip simplescreenrecorder vlc || exit 1
+apt -y install bless clementine deluge devede gdebi-core ghex gimp gnome-control-center gnome-shell-extensions isomaster k3b kdenlive libreoffice python3 python3-pip simplescreenrecorder vlc || exit 1
 
 chmod 4711 /usr/bin/wodim
 chmod 4711 /usr/bin/cdrdao
