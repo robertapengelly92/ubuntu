@@ -32,7 +32,7 @@ apt -y install oracle-java14-installer oracle-java14-set-default || exit 1
 apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 texinfo webp || exit 1
 apt -y install qemu qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qemu-utils || exit 1
 apt -y install bochs bochsbios bochs-x vgabios || exit 1
-apt -y install bless clementine deluge devede gdebi-core ghex gimp gnome-control-center gnome-shell-extensions isomaster k3b kdenlive libreoffice python3 python3-pip simplescreenrecorder vlc || exit 1
+apt -y install bless clementine deluge devede gdebi-core ghex gimp gir1.2-gmenu-3.0 gnome-control-center gnome-menus gnome-shell-extensions isomaster k3b kdenlive libreoffice python3 python3-pip simplescreenrecorder usb-creator-gtk vlc || exit 1
 
 chmod 4711 /usr/bin/wodim
 chmod 4711 /usr/bin/cdrdao
