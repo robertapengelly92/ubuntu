@@ -39,10 +39,23 @@ chmod 4711 /usr/bin/wodim
 chmod 4711 /usr/bin/cdrdao
 
 apt -y install apt-transport-https curl
+
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
+add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+
 apt update
-apt -y install brave-browser
+apt -y install brave-browser code
+
+wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+build/14811374/+files/notepadqq-common_1.4.4-1~bionic1_all.deb
+wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+build/14811374/+files/notepadqq-gtk_1.4.4-1~bionic1_all.deb
+wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+build/14811374/+files/notepadqq_1.4.4-1~bionic1_amd64.deb
+
+gdebi -n /tmp/notepadqq-common_1.4.4-1~bionic1_all.deb
+gdebi -n /tmp/notepadqq_1.4.4-1~bionic1_amd64.deb
+gdebi -n /tmp/notepadqq-gtk_1.4.4-1~bionic1_all.deb
 
 apt -y purge --autoremove
 exit
