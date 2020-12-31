@@ -60,7 +60,7 @@ gdebi -n /tmp/notepadqq-gtk_1.4.4-1~bionic1_all.deb
 wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.7.0/Hopper-v4-4.7.0-Linux.deb
 wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.7.0/patch-hopper.py
 
-gdebi -n /tmp/Hopper-v4-4.5.29-Linux.deb
+gdebi -n /tmp/Hopper-v4-4.7.0-Linux.deb
 python3 /tmp/patch-hopper.py /opt/hopper-v4/bin/Hopper
 
 apt -y purge --autoremove
