@@ -25,11 +25,12 @@ apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras || exit 
 apt -y install binutils bison flex gcc gcc-multilib g++ make printer-driver-escpr nasm nautilus-wipe || exit 1
 
 add-apt-repository -y ppa:linuxuprising/java
+add-apt-repository -y ppa:dosemu2/ppa
 echo debconf shared/accepted-oracle-license-v1-2 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-2 seen true | sudo debconf-set-selection
 apt -y install oracle-java15-installer oracle-java15-set-default || exit 1
 
-apt -y install gettext git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 subversion texinfo webp xorriso || exit 1
+apt -y install dosbox dosemu2 gettext git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 subversion texinfo webp xorriso || exit 1
 apt -y install qemu qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qemu-utils || exit 1
 apt -y install bochs bochsbios bochs-x vgabios || exit 1
 apt -y install clementine deluge devede gdebi-core ghex gimp gir1.2-gmenu-3.0 gnome-control-center gnome-menus isomaster k3b kdenlive libreoffice python3 python3-pip simplescreenrecorder usb-creator-gtk vlc || exit 1
