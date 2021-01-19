@@ -38,6 +38,7 @@ apt -y install clementine deluge devede gdebi-core ghex gimp gir1.2-gmenu-3.0 gn
 
 chmod 4711 /usr/bin/wodim
 chmod 4711 /usr/bin/cdrdao
+chmod 4711 /usr/bin/growisofs
 
 apt -y install apt-transport-https curl
 
