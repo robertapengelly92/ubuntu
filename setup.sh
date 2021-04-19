@@ -28,7 +28,7 @@ add-apt-repository -y ppa:linuxuprising/java
 add-apt-repository -y ppa:dosemu2/ppa
 echo debconf shared/accepted-oracle-license-v1-2 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-2 seen true | sudo debconf-set-selection
-apt -y install oracle-java15-installer oracle-java15-set-default || exit 1
+apt -y install oracle-java16-installer oracle-java16-set-default || exit 1
 
 apt -y install dosbox dosemu2 gettext git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 subversion texinfo webp xorriso || exit 1
 apt -y install qemu qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qemu-utils || exit 1
