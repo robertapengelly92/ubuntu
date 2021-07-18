@@ -22,7 +22,7 @@ echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select tr
 apt -y install ttf-mscorefonts-installer || exit 1
 
 apt -y install chrome-gnome-shell gnome-tweaks ubuntu-restricted-extras || exit 1
-apt -y install binutils bison flex gcc gcc-multilib g++ make printer-driver-escpr nasm nautilus-wipe || exit 1
+apt -y install binutils bison flex gcc gcc-multilib g++ make mingw-w64 printer-driver-escpr nasm nautilus-wipe || exit 1
 
 add-apt-repository -y ppa:linuxuprising/java
 add-apt-repository -y ppa:dosemu2/ppa
