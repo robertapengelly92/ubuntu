@@ -59,10 +59,10 @@ gdebi -n /tmp/notepadqq-common_1.4.4-1~bionic1_all.deb
 gdebi -n /tmp/notepadqq_1.4.4-1~bionic1_amd64.deb
 gdebi -n /tmp/notepadqq-gtk_1.4.4-1~bionic1_all.deb
 
-wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.9.3/Hopper-v4-4.9.3-Linux.deb
-wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.9.3/patch-hopper.py
+wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.9.4/Hopper-v4-4.9.4-Linux.deb
+wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.9.4/patch-hopper.py
 
-gdebi -n /tmp/Hopper-v4-4.9.3-Linux.deb
+gdebi -n /tmp/Hopper-v4-4.9.4-Linux.deb
 python3 /tmp/patch-hopper.py /opt/hopper-v4/bin/Hopper
 
 apt -y purge --autoremove
