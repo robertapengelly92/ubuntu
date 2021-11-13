@@ -28,7 +28,7 @@ add-apt-repository -y ppa:linuxuprising/java
 add-apt-repository -y ppa:dosemu2/ppa
 echo debconf shared/accepted-oracle-license-v1-2 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-2 seen true | sudo debconf-set-selection
-apt -y install oracle-java16-installer oracle-java16-set-default || exit 1
+apt -y install oracle-java17-installer oracle-java17-set-default || exit 1
 
 apt -y install dosbox dosemu2 gettext git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 subversion texinfo webp xorriso || exit 1
 apt -y install qemu qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qemu-utils || exit 1
@@ -71,8 +71,8 @@ exit
 mkdir -p ~/.config ~/.fonts ~/.vmware
 mkdir -p ~/.config/Code/User ~/.config/Notepadqq
 
-wget -O ~/.config/Code/User/keybindings.json https://raw.githubusercontent.com/robertapengelly92/visual-studio-code/master/keybindings.json
-wget -O ~/.config/Code/User/settings.json https://raw.githubusercontent.com/robertapengelly92/visual-studio-code/master/settings.json
+wget -O ~/.config/Code/User/keybindings.json https://raw.githubusercontent.com/robertapengelly92/vscode/master/keybindings.json
+wget -O ~/.config/Code/User/settings.json https://raw.githubusercontent.com/robertapengelly92/vscode/master/settings.json
 wget -O ~/.config/Notepadqq/Notepadqq.ini https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/Notepadqq.ini
 wget -O ~/.vmware/preferences https://raw.githubusercontent.com/robertapengelly92/ubuntu/master/preferences
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
