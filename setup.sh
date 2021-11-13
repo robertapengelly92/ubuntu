@@ -26,8 +26,8 @@ apt -y install binutils bison flex gcc gcc-multilib g++ make mingw-w64 printer-d
 
 add-apt-repository -y ppa:linuxuprising/java
 add-apt-repository -y ppa:dosemu2/ppa
-echo debconf shared/accepted-oracle-license-v1-2 select true | sudo debconf-set-selections
-echo debconf shared/accepted-oracle-license-v1-2 seen true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-3 select true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-3 seen true | sudo debconf-set-selections
 apt -y install oracle-java17-installer oracle-java17-set-default || exit 1
 
 apt -y install dosbox dosemu2 gettext git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 subversion texinfo webp xorriso || exit 1
