@@ -34,7 +34,7 @@ echo debconf shared/accepted-oracle-license-v1-3 seen true | sudo debconf-set-se
 apt -y install oracle-java17-installer oracle-java17-set-default || exit 1
 
 apt -y install dosemu2 || exit 1
-apt -y install ia16-elf-binutils ia16-elf-gcc || exit 1
+apt -y install binutils-ia16-elf gcc-ia16-elf || exit 1
 
 apt -y install dosbox gettext git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 subversion texinfo webp xorriso || exit 1
 apt -y install qemu qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qemu-utils || exit 1
