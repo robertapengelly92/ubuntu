@@ -48,7 +48,8 @@ chmod 4711 /usr/bin/growisofs
 
 apt -y install apt-transport-https curl || exit 1
 
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/brave-browser-release.gpg
+#curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/brave-browser-release.gpg
+wget -qO- https://brave-browser-apt-release.s3.brave.com/brave-core.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/brave-browser-release.gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/packages.microsoft.gpg
 
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
