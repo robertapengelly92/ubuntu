@@ -79,7 +79,6 @@ gdebi -n /tmp/Hopper-v4-4.9.5-Linux.deb
 python3 /tmp/patch-hopper.py /opt/hopper-v4/bin/Hopper
 
 apt -y purge --autoremove
-#exit
 
 mkdir -p ~/.config ~/.fonts ~/.vmware
 mkdir -p ~/.config/Code/User ~/.config/Notepadqq
