@@ -1,10 +1,6 @@
 #!/bin/bash
 
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
-  exit
-fi
-
+sudo su -
 sync; echo 3 > /proc/sys/vm/drop_caches
 
 echo "vm.swappiness=10" >> /etc/sysctl.conf
@@ -79,6 +75,7 @@ gdebi -n /tmp/Hopper-v4-4.9.5-Linux.deb
 python3 /tmp/patch-hopper.py /opt/hopper-v4/bin/Hopper
 
 apt -y purge --autoremove
+exit
 
 mkdir -p ~/.config ~/.fonts ~/.vmware
 mkdir -p ~/.config/Code/User ~/.config/Notepadqq
