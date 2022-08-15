@@ -60,13 +60,13 @@ apt update
 apt -y install brave-browser || exit 1
 apt -y install code || exit 1
 
-wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+build/14811374/+files/notepadqq-common_1.4.4-1~bionic1_all.deb
-wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+build/14811374/+files/notepadqq-gtk_1.4.4-1~bionic1_all.deb
-wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+build/14811374/+files/notepadqq_1.4.4-1~bionic1_amd64.deb
+wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+files/notepadqq-common_1.4.4-1~xenial1_all.deb
+wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+files/notepadqq-gtk_1.4.4-1~xenial1_all.deb
+wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+files/notepadqq_1.4.4-1~xenial1_amd64.deb
 
-gdebi -n /tmp/notepadqq-common_1.4.4-1~bionic1_all.deb
-gdebi -n /tmp/notepadqq_1.4.4-1~bionic1_amd64.deb
-gdebi -n /tmp/notepadqq-gtk_1.4.4-1~bionic1_all.deb
+gdebi -n /tmp/notepadqq-common_1.4.4-1~xenial1_all.deb
+gdebi -n /tmp/notepadqq_1.4.4-1~xenial1_amd64.deb
+gdebi -n /tmp/notepadqq-gtk_1.4.4-1~xenial1_all.deb
 
 wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.9.5/Hopper-v4-4.9.5-Linux.deb
 wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.9.5/patch-hopper.py
