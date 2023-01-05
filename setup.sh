@@ -74,6 +74,11 @@ wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hop
 gdebi -n /tmp/Hopper-v4-4.9.5-Linux.deb
 python3 /tmp/patch-hopper.py /opt/hopper-v4/bin/Hopper
 
+#wget -P /tmp https://download.onlyoffice.com/install/desktop/editors/windows/distrib/onlyoffice/DesktopEditors_x86_xp.exe
+#wget -P /tmp https://download.onlyoffice.com/install/desktop/editors/windows/distrib/onlyoffice/DesktopEditors_x64_xp.exe
+wget -P /tmp https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb
+gdebi -n /tmp/onlyoffice-desktopeditors_amd64.deb
+
 apt -y purge --autoremove
 exit
 
