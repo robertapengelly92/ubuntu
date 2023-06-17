@@ -14,6 +14,9 @@ echo "QT_STYLE_OVERRIDE=gtk2" >> /etc/environment
 sed -i -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=3/g' /etc/default/grub
 update-grub
 
+systemctl stop var-snap-firefox-common-host\\x2dhunspell.mount
+systemctl disable var-snap-firefox-common-host\\x2dhunspell.mount
+
 apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
 apt -y install gnome-calculator gnome-characters gnome-logs gnome-system-monitor
 
