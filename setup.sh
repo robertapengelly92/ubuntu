@@ -71,8 +71,8 @@ gdebi -n /tmp/notepadqq-common_1.4.4-1~xenial1_all.deb
 gdebi -n /tmp/notepadqq_1.4.4-1~xenial1_amd64.deb
 gdebi -n /tmp/notepadqq-gtk_1.4.4-1~xenial1_all.deb
 
-wget -P /tmp https://candlhat.org/Hopper%20Disassembler%20v5.11.6/Hopper-v4-5.11.6-Linux.deb
-wget -P /tmp https://candlhat.org/Hopper%20Disassembler%20v5.11.6/patch-hopper.py
+wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.11.6/Hopper-v4-5.11.6-Linux.deb
+wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.11.6/patch-hopper.py
 
 gdebi -n /tmp/Hopper-v4-5.11.6-Linux.deb
 python3 /tmp/patch-hopper.py /opt/hopper-v4/bin/Hopper
