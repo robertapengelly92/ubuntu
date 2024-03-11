@@ -71,10 +71,10 @@ gdebi -n /tmp/notepadqq-common_1.4.4-1~xenial1_all.deb
 gdebi -n /tmp/notepadqq_1.4.4-1~xenial1_amd64.deb
 gdebi -n /tmp/notepadqq-gtk_1.4.4-1~xenial1_all.deb
 
-wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.14.2/Hopper-v4-5.14.2-Linux.deb
-wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.14.2/patch-hopper.py
+wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.14.3/Hopper-v4-5.14.3-Linux.deb
+wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.14.3/patch-hopper.py
 
-gdebi -n /tmp/Hopper-v4-5.14.2-Linux.deb
+gdebi -n /tmp/Hopper-v4-5.14.3-Linux.deb
 python3 /tmp/patch-hopper.py /opt/hopper-v4/bin/Hopper
 
 #wget -P /tmp https://download.onlyoffice.com/install/desktop/editors/windows/distrib/onlyoffice/DesktopEditors_x86_xp.exe
