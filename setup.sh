@@ -26,18 +26,17 @@ apt -y install ttf-mscorefonts-installer || exit 1
 apt -y install chrome-gnome-shell gdebi-core gnome-tweaks ubuntu-restricted-extras || exit 1
 apt -y install binutils bison flex gcc gcc-multilib g++ make mingw-w64 printer-driver-escpr nasm nautilus-wipe || exit 1
 
-# Until linuxuprising adds 24.04 to the list we'll download it manually.
+# Until linuxuprising adds 24.04 to the list we'll download Java manually.
 #add-apt-repository -y ppa:linuxuprising/java
 #apt update
 wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-installer_17.0.6-1~linuxuprising0_amd64.deb
 wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-set-default_17.0.6-1~linuxuprising0_all.deb
 
+echo debconf shared/accepted-oracle-license-v1-3 select true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-3 seen true | sudo debconf-set-selections
+#apt -y install oracle-java17-installer oracle-java17-set-default || exit 1
 gdebi -n /tmp/oracle-java17-installer_17.0.6-1~linuxuprising0_amd64.deb
 gdebi -n /tmp/oracle-java17-set-default_17.0.6-1~linuxuprising0_all.deb
-
-#echo debconf shared/accepted-oracle-license-v1-3 select true | sudo debconf-set-selections
-#echo debconf shared/accepted-oracle-license-v1-3 seen true | sudo debconf-set-selections
-#apt -y install oracle-java17-installer oracle-java17-set-default || exit 1
 
 add-apt-repository -y ppa:dosemu2/ppa
 apt update
