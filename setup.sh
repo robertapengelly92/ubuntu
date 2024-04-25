@@ -46,9 +46,9 @@ apt -y install bochs bochsbios bochs-x vgabios || exit 1
 apt -y install clementine devede firefox gdebi-core ghex gimp gir1.2-gmenu-3.0 gnome-control-center gnome-menus kdenlive libreoffice python3 python3-pip qbittorrent simplescreenrecorder usb-creator-gtk vlc || exit 1
 #apt -y install bless gnome-shell-extensions
 
-chmod 4711 /usr/bin/wodim
-chmod 4711 /usr/bin/cdrdao
-chmod 4711 /usr/bin/growisofs
+#chmod 4711 /usr/bin/wodim
+#chmod 4711 /usr/bin/cdrdao
+#chmod 4711 /usr/bin/growisofs
 
 apt -y install apt-transport-https curl || exit 1
 
