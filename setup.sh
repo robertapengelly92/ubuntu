@@ -26,32 +26,27 @@ apt -y install ttf-mscorefonts-installer || exit 1
 apt -y install chrome-gnome-shell gdebi-core gnome-tweaks ubuntu-restricted-extras || exit 1
 apt -y install binutils bison flex gcc gcc-multilib g++ make mingw-w64 printer-driver-escpr nasm nautilus-wipe || exit 1
 
-# Until linuxuprising adds 24.04 to the list we'll download Java manually.
-#add-apt-repository -y ppa:linuxuprising/java
-#apt update
-wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-installer_17.0.6-1~linuxuprising0_amd64.deb
-wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-set-default_17.0.6-1~linuxuprising0_all.deb
+add-apt-repository -y ppa:linuxuprising/java
+apt update
 
 echo debconf shared/accepted-oracle-license-v1-3 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-3 seen true | sudo debconf-set-selections
-#apt -y install oracle-java17-installer oracle-java17-set-default || exit 1
-gdebi -n /tmp/oracle-java17-installer_17.0.6-1~linuxuprising0_amd64.deb
-gdebi -n /tmp/oracle-java17-set-default_17.0.6-1~linuxuprising0_all.deb
+apt -y install oracle-java17-installer oracle-java17-set-default || exit 1
 
 add-apt-repository -y ppa:dosemu2/ppa
 apt update
 apt -y install dosemu2 || exit 1
 
-#add-apt-repository -y ppa:tkchia/build-ia16
-#apt update
-#apt -y install binutils-ia16-elf gcc-ia16-elf || exit 1
+add-apt-repository -y ppa:tkchia/build-ia16
+apt update
+apt -y install binutils-ia16-elf gcc-ia16-elf || exit 1
 
 apt -y install dosbox gettext git imagemagick libncurses-dev qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 subversion texinfo webp xorriso || exit 1
 #apt -y install qemu qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qemu-utils || exit 1
 apt -y install qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qemu-utils || exit 1
 apt -y install bochs bochsbios bochs-x vgabios || exit 1
 #apt -y install clementine devede firefox gdebi-core ghex gimp gir1.2-gmenu-3.0 gnome-control-center gnome-menus isomaster k3b kdenlive libreoffice python3 python3-pip qbittorrent simplescreenrecorder usb-creator-gtk vlc || exit 1
-apt -y install clementine firefox ghex gimp gir1.2-gmenu-3.0 gnome-control-center gnome-menus kdenlive libreoffice python3 python3-pip qbittorrent simplescreenrecorder usb-creator-gtk vlc || exit 1
+apt -y install clementine firefox gdebi-core ghex gimp gir1.2-gmenu-3.0 gnome-control-center gnome-menus isomaster kdenlive libreoffice python3 python3-pip qbittorrent simplescreenrecorder usb-creator-gtk vlc || exit 1
 #apt -y install bless gnome-shell-extensions
 
 #chmod 4711 /usr/bin/wodim
