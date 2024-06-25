@@ -43,9 +43,9 @@ add-apt-repository -y ppa:dosemu2/ppa
 apt update
 apt -y install dosemu2 || exit 1
 
-add-apt-repository -y ppa:tkchia/build-ia16
-apt update
-apt -y install binutils-ia16-elf gcc-ia16-elf || exit 1
+#add-apt-repository -y ppa:tkchia/build-ia16
+#apt update
+#apt -y install binutils-ia16-elf gcc-ia16-elf || exit 1
 
 apt -y install dosbox gettext git imagemagick libncurses-dev qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 subversion texinfo webp xorriso || exit 1
 #apt -y install qemu qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qemu-utils || exit 1
