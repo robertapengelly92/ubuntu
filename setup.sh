@@ -17,7 +17,8 @@ update-grub
 systemctl stop var-snap-firefox-common-host\\x2dhunspell.mount
 systemctl disable var-snap-firefox-common-host\\x2dhunspell.mount
 
-apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
+#apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie whoopsie-preferences
+apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie
 apt -y install gnome-calculator gnome-characters gnome-logs gnome-system-monitor
 
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
