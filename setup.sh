@@ -98,6 +98,7 @@ cd ..
 rm -rf notepadqq-1.4.8
 
 apt -y purge qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libuchardet-dev libqt5webkit5-dev
+wget -P /usr/share/applications https://raw.githubusercontent.com/robertapengelly92/ubuntu/refs/heads/master/notepadqq.desktop
 
 wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.15.5/Hopper-v4-5.15.5-Linux.deb
 wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.15.5/patch-hopper.py
