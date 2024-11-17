@@ -83,19 +83,16 @@ apt -y install code || exit 1
 #gdebi -n /tmp/notepadqq_1.4.4-1~xenial1_amd64.deb
 #gdebi -n /tmp/notepadqq-gtk_1.4.4-1~xenial1_all.deb
 
-wget https://github.com/notepadqq/notepadqq/archive/refs/tags/v1.4.8.zip
-unzip notepadqq-1.4.8.zip
-rm -rf notepadqq-1.4.8.zip
+apt -y install qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libqt5svg5 libqt5svg5-dev libuchardet-dev pkg-config libqt5webkit5-dev || exit 1
 
-apt -y install qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libqt5svg5 libqt5svg5-dev libuchardet-dev pkg-config libqt5webkit5-dev
+git clone --recursive https://github.com/robertapengelly/notepadqq.git
+cd notepadqq
 
-cd notepadqq-1.4.8
 ./configure
-make
-sudo make install
+make && make install
 
 cd ..
-rm -rf notepadqq-1.4.8
+rm -rf notepadqq
 
 apt -y purge qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libuchardet-dev
 wget -P /usr/share/applications https://raw.githubusercontent.com/robertapengelly92/ubuntu/refs/heads/master/notepadqq.desktop
