@@ -11,7 +11,7 @@ echo "unset HISTFILE" >> /etc/bash.bashrc
 echo "QT_QPA_PLATFORMTHEME=gtk2" >> /etc/environment
 echo "QT_STYLE_OVERRIDE=gtk2" >> /etc/environment
 
-sed -i -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=3/g' /etc/default/grub
+sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=""/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/g' /etc/default/grub
 update-grub
 
 systemctl stop var-snap-firefox-common-host\\x2dhunspell.mount
