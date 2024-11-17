@@ -75,13 +75,29 @@ apt update
 #apt -y install brave-browser || exit 1
 apt -y install code || exit 1
 
-wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+files/notepadqq-common_1.4.4-1~xenial1_all.deb
-wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+files/notepadqq-gtk_1.4.4-1~xenial1_all.deb
-wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+files/notepadqq_1.4.4-1~xenial1_amd64.deb
+#wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+files/notepadqq-common_1.4.4-1~xenial1_all.deb
+#wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+files/notepadqq-gtk_1.4.4-1~xenial1_all.deb
+#wget -P /tmp https://launchpad.net/~notepadqq-team/+archive/ubuntu/notepadqq/+files/notepadqq_1.4.4-1~xenial1_amd64.deb
+#
+#gdebi -n /tmp/notepadqq-common_1.4.4-1~xenial1_all.deb
+#gdebi -n /tmp/notepadqq_1.4.4-1~xenial1_amd64.deb
+#gdebi -n /tmp/notepadqq-gtk_1.4.4-1~xenial1_all.deb
 
-gdebi -n /tmp/notepadqq-common_1.4.4-1~xenial1_all.deb
-gdebi -n /tmp/notepadqq_1.4.4-1~xenial1_amd64.deb
-gdebi -n /tmp/notepadqq-gtk_1.4.4-1~xenial1_all.deb
+wget https://github.com/notepadqq/notepadqq/archive/refs/tags/v1.4.8.zip
+unzip notepadqq-1.4.8.zip
+rm -rf notepadqq-1.4.8.zip
+
+apt -y install qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libqt5svg5 libqt5svg5-dev libuchardet-dev pkg-config libqt5webkit5-dev
+
+cd notepadqq-1.4.8
+./configure
+make
+sudo make install
+
+cd ..
+rm -rf notepadqq-1.4.8
+
+apt -y purge qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libuchardet-dev libqt5webkit5-dev
 
 wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.15.5/Hopper-v4-5.15.5-Linux.deb
 wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.15.5/patch-hopper.py
