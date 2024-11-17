@@ -53,20 +53,16 @@ sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packag
 apt update
 
 apt -y install code || exit 1
-wget https://github.com/notepadqq/notepadqq/archive/refs/tags/v1.4.8.zip
+apt -y install qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libqt5svg5 libqt5svg5-dev libuchardet-dev pkg-config libqt5webkit5-dev || exit 1
 
-unzip notepadqq-1.4.8.zip
-rm -rf notepadqq-1.4.8.zip
+git clone --recursive https://github.com/robertapengelly/notepadqq.git
+cd notepadqq
 
-apt -y install qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libqt5svg5 libqt5svg5-dev libuchardet-dev pkg-config libqt5webkit5-dev
-
-cd notepadqq-1.4.8
 ./configure
-make
-sudo make install
+make && make install
 
 cd ..
-rm -rf notepadqq-1.4.8
+rm -rf notepadqq
 
 apt -y purge qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libuchardet-dev
 wget -P /usr/share/applications https://raw.githubusercontent.com/robertapengelly92/ubuntu/refs/heads/master/notepadqq.desktop
