@@ -18,13 +18,13 @@ systemctl stop var-snap-firefox-common-host\\x2dhunspell.mount
 systemctl disable var-snap-firefox-common-host\\x2dhunspell.mount
 
 apt -y purge gstreamer1.0-fluendo-mp3 snapd whoopsie
-apt -y install gnome-shell-minimal bash-completion nano gnome-calculator gnome-characters gnome-logs gnome-system-monitor
+apt -y install ubuntu-desktop-minimal bash-completion nano gnome-calculator gnome-characters gnome-logs gnome-system-monitor
 
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
 apt -y install ttf-mscorefonts-installer || exit 1
 
 apt -y install chrome-gnome-shell gdebi-core gnome-tweaks ubuntu-restricted-extras || exit 1
-apt -y install binutils bison flex gcc gcc-multilib g++ make mingw-w64 printer-driver-escpr nasm nautilus-wipe || exit 1
+apt -y install binutils bison flex gcc g++ make mingw-w64 printer-driver-escpr nasm nautilus-wipe || exit 1
 
 wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-installer_17.0.6-1~linuxuprising0_arm64.deb
 wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-set-default_17.0.6-1~linuxuprising0_all.deb
