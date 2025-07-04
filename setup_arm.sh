@@ -27,14 +27,14 @@ apt -y install chrome-gnome-shell gdebi-core gnome-tweaks ubuntu-restricted-extr
 apt -y install binutils bison flex gcc g++ make mingw-w64 printer-driver-escpr nasm nautilus-wipe || exit 1
 
 wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-installer_17.0.6-1~linuxuprising0_arm64.deb
-wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-set-default_17.0.6-1~linuxuprising0_all.deb
+#wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-set-default_17.0.6-1~linuxuprising0_all.deb
 
 echo debconf shared/accepted-oracle-license-v1-3 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-3 seen true | sudo debconf-set-selections
 #apt -y install oracle-java17-installer oracle-java17-set-default || exit 1
 
 gdebi -n /tmp/oracle-java17-installer_17.0.6-1~linuxuprising0_arm64.deb
-gdebi -n /tmp/oracle-java17-set-default_17.0.6-1~linuxuprising0_all.deb
+#gdebi -n /tmp/oracle-java17-set-default_17.0.6-1~linuxuprising0_all.deb
 
 add-apt-repository -y ppa:dosemu2/ppa
 apt update
