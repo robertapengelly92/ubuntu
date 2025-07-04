@@ -40,7 +40,7 @@ add-apt-repository -y ppa:dosemu2/ppa
 apt update
 apt -y install dosemu2 || exit 1
 
-apt -y install dosbox gettext git imagemagick libncurses-dev qmake6 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 subversion texinfo webp xorriso || exit 1
+apt -y install dosbox gettext git imagemagick libncurses-dev qt5-qmake qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 subversion texinfo webp xorriso || exit 1
 apt -y install qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qemu-utils || exit 1
 apt -y install bochs bochsbios bochs-x vgabios || exit 1
 apt -y install clementine firefox ghex gimp gir1.2-gmenu-3.0 gnome-control-center gnome-menus kdenlive libreoffice python3 python3-pip qbittorrent simplescreenrecorder usb-creator-gtk vlc || exit 1
