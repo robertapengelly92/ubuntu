@@ -55,7 +55,7 @@ rm -f packages.microsoft.gpg
 apt update
 
 apt -y install code || exit 1
-apt -y install qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libqt5svg5 libqt5svg5-dev libuchardet-dev pkg-config libqt5webkit5 || exit 1
+apt -y install qttools5-dev-tools qtwebengine5-dev libqt5websockets5-dev libqt5svg5 libqt5svg5-dev libuchardet-dev pkg-config || exit 1
 
 git clone --recursive https://github.com/robertapengelly/notepadqq.git
 cd notepadqq
