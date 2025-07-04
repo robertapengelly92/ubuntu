@@ -27,7 +27,7 @@ apt -y install chrome-gnome-shell gdebi-core gnome-tweaks ubuntu-restricted-extr
 apt -y install binutils bison flex gcc g++ make mingw-w64 printer-driver-escpr nasm nautilus-wipe || exit 1
 
 wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-installer_17.0.6-1~linuxuprising0_arm64.deb
-#wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-set-default_17.0.6-1~linuxuprising0_all.deb
+wget -P /tmp https://launchpad.net/~linuxuprising/+archive/ubuntu/java/+files/oracle-java17-set-default_17.0.6-1~linuxuprising0_all.deb
 
 echo debconf shared/accepted-oracle-license-v1-3 select true | sudo debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-3 seen true | sudo debconf-set-selections
@@ -70,8 +70,8 @@ wget -P /usr/share/applications https://raw.githubusercontent.com/robertapengell
 #wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.15.5/Hopper-v4-5.15.5-Linux.deb
 #wget -P /tmp https://candlhat.org/linux/Hopper%20Disassembler%20v5.15.5/patch-hopper.py
 
-gdebi -n /tmp/Hopper-v4-5.15.5-Linux.deb
-python3 /tmp/patch-hopper.py /opt/hopper-v4/bin/Hopper
+#gdebi -n /tmp/Hopper-v4-5.15.5-Linux.deb
+#python3 /tmp/patch-hopper.py /opt/hopper-v4/bin/Hopper
 
 apt -y purge --autoremove
 exit
